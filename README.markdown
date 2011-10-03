@@ -25,7 +25,7 @@ You also need to set the following environment variables:
 
 ```bash
 export AWS_ACCESS_KEY_ID="<Insert your AWS Access Key>"
-export AWS_SECRET_ACESS_KEY="<Insert your AWS Secret Key>"
+export AWS_SECRET_ACCESS_KEY="<Insert your AWS Secret Key>"
 ```
 
 ## Usage
@@ -37,7 +37,7 @@ Now you can write code like the following:
 >>> zone = route53.create_zone('example.com')
 >>> zone.add_a('example.com', '182.12.142.12')
 >>> zone.add_cname('www.example.com', 'example.com')
->>> zone.add_mx(['10 mail.example.com', '20 mail.example.com']
+>>> zone.add_mx(['10 mx1.example.com', '20 mx2.example.com'])
 ```
 
 Now what just happended.  On line two we create the zone.  Then we create 
@@ -54,19 +54,19 @@ Now, once we have all of our records up and running let’s see what we can do.
 >>> zone = route53.get_zone('example.com')
 >>> for record in zone.get_records():
     print record
-<Record:A:example.com.>
-<Record:CNAME:www.example.com.>
-<Record:MX:example.com.>
-<Record:NS:example.com.>
-<Record:SOA:example.com.>
+<Record:A:example.com.:[u'182.12.142.12']>
+<Record:CNAME:www.example.com.:['example.com']>
+<Record:MX:example.com.:[u'10 mx1.example.com', u'20 mx2.example.com']>
+<Record:NS:example.com.:[u'ns-1249.awsdns-28.org.', u'ns-902.awsdns-48.net.', u'ns-257.awsdns-32.com.', u'ns-1555.awsdns-02.co.uk.']>
+<Record:SOA:example.com.[u'ns-1249.awsdns-28.org. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400']>
 >>> zone.get_nameservers()
 [u'ns-1249.awsdns-28.org.', u'ns-902.awsdns-48.net.', u'ns-257.awsdns-32.com.', u'ns-1555.awsdns-02.co.uk.']
 ```
 
-So here we grabbed the zone by putting in it’s name, and then we printed 
+First, we grabbed all available zones just for show.  Then, we grabbed the 'example.com' zone by putting in it’s name, and we printed 
 all the records that we have added so far. (Notice, every zone you create 
 has an NS record and SOA record automatically created by Route53 when you 
-create the zone.) We also printed out the list of name servers that Amazon 
+create the zone.) We also printed the list of name servers that Amazon 
 started us out with.  You add the nameservers to your domain 
 registrar to actually switch to Amazon’s DNS service.  I would recommend 
 migrating a non-critical domain to start to make sure that you understand 
