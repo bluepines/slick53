@@ -1,28 +1,25 @@
 # slick53
 A python interface for AWS Route53.
 
-Original Author: Brad Carleton
-
-Company: Blue Pines Technologies
-
-Website: [http://www.bluepines.org](http://www.bluepines.org)
-
-Blog: [An introduction to Slick53](http://www.bluepines.org/blog/slick53-python-interface-aws-route53)
+ * Original Author: Brad Carleton
+ * Company: Blue Pines Technologies
+ * Website: [http://www.bluepines.org](http://www.bluepines.org)
+ * Blog: [An introduction to Slick53](http://www.bluepines.org/blog/slick53-python-interface-aws-route53)
 
 ## Overview
 This module provides a slick, super-easy interface for dealing with
 AWS Route53.  It is built on top of the boto library.
 
 ## Installation
-How to Install from github:
+How to Install from github\:
+
 1. git clone git://github.com/bluepines/slick53.git
 2. cd slick53
 3. sudo python setup.py install
 
 You also need to set the following environment variables:
-`AWS_ACCESS_KEY_ID
-
-AWS_SECRET_KEY_ID`
+    AWS_ACCESS_KEY_ID
+    AWS_SECRET_KEY_ID
 
 ## Usage
 I wrote this library to make dealing with Amazon AWS a lot easier.
@@ -50,11 +47,11 @@ Now, once we have all of our records up and running let’s see what we can do.
 >>> zone = route53.get_zone('example.com')
 >>> for record in zone.get_records():
     print record
-<Record:A:example.com>
-<Record:CNAME:www.example.com>
-<Record:MX:example.com>
-<Record:NS:example.com>
-<Record:SOA:example.com>
+<Record:A:example.com.>
+<Record:CNAME:www.example.com.>
+<Record:MX:example.com.>
+<Record:NS:example.com.>
+<Record:SOA:example.com.>
 >>> zone.get_nameservers()
 [u'ns-1249.awsdns-28.org.', u'ns-902.awsdns-48.net.', u'ns-257.awsdns-32.com.', u'ns-1555.awsdns-02.co.uk.']
 ```
