@@ -56,7 +56,7 @@ Route53Connection.create_zone = create_zone
 Route53Connection.make_qualified = make_qualified
 
 def repr_record(self):
-    return '<Record:%s:%s>' % (self.type, self.name)
+    return '<Record:%s:%s:%s>' % (self.type, self.name, self.resource_records)
 
 Record.__repr__ = repr_record
 
