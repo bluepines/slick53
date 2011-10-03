@@ -15,9 +15,11 @@ It is built on top of the boto library.
 ## Installation
 How to Install from github\:
 
-1. git clone git://github.com/bluepines/slick53.git
-2. cd slick53
-3. sudo python setup.py install
+```bash
+git clone git://github.com/bluepines/slick53.git
+cd slick53
+sudo python setup.py install
+```
 
 You also need to set the following environment variables:
 
