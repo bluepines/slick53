@@ -13,7 +13,7 @@ AWS Route53.
 It is built on top of the boto library.
 
 ## Installation
-How to Install from github\:
+Run these commands to install:
 
 ```bash
 git clone git://github.com/bluepines/slick53.git
@@ -25,7 +25,7 @@ You also need to set the following environment variables:
 
 ```bash
 export AWS_ACCESS_KEY_ID="<Insert your AWS Access Key>"
-export AWS_SECRET_KEY_ID="<Insert your AWS Secret Key>"
+export AWS_SECRET_ACESS_KEY="<Insert your AWS Secret Key>"
 ```
 
 ## Usage
