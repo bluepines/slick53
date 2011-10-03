@@ -4,11 +4,13 @@ A python interface for AWS Route53.
  * Original Author: Brad Carleton
  * Company: Blue Pines Technologies
  * Website: [http://www.bluepines.org](http://www.bluepines.org)
- * Blog: [An introduction to Slick53](http://www.bluepines.org/blog/slick53-python-interface-aws-route53)
+ * Blog Release: [An introduction to Slick53](http://www.bluepines.org/blog/slick53-python-interface-aws-route53)
 
 ## Overview
 This module provides a slick, super-easy interface for dealing with
-AWS Route53.  It is built on top of the boto library.
+AWS Route53.  
+
+It is built on top of the boto library.
 
 ## Installation
 How to Install from github\:
@@ -18,6 +20,7 @@ How to Install from github\:
 3. sudo python setup.py install
 
 You also need to set the following environment variables:
+
     AWS_ACCESS_KEY_ID
     AWS_SECRET_KEY_ID
 
