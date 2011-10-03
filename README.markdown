@@ -6,12 +6,6 @@ A python interface for AWS Route53.
  * Website: [http://www.bluepines.org](http://www.bluepines.org)
  * Blog Release: [An introduction to Slick53](http://www.bluepines.org/blog/slick53-python-interface-aws-route53)
 
-## Overview
-This module provides a slick, super-easy interface for dealing with
-AWS Route53.  
-
-It is built on top of the boto library.
-
 ## Installation
 Run these commands to install:
 
@@ -57,10 +51,10 @@ Now, once we have all of our records up and running let’s see what we can do.
 <Record:A:example.com.:[u'182.12.142.12']>
 <Record:CNAME:www.example.com.:['example.com']>
 <Record:MX:example.com.:[u'10 mx1.example.com', u'20 mx2.example.com']>
-<Record:NS:example.com.:[u'ns-1249.awsdns-28.org.', u'ns-902.awsdns-48.net.', u'ns-257.awsdns-32.com.', u'ns-1555.awsdns-02.co.uk.']>
+<Record:NS:example.com.:[u'ns-1249.awsdns-28.org.', u'ns-902.awsdns-48.net.']>
 <Record:SOA:example.com.[u'ns-1249.awsdns-28.org. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400']>
 >>> zone.get_nameservers()
-[u'ns-1249.awsdns-28.org.', u'ns-902.awsdns-48.net.', u'ns-257.awsdns-32.com.', u'ns-1555.awsdns-02.co.uk.']
+[u'ns-1249.awsdns-28.org.', u'ns-902.awsdns-48.net.']
 ```
 
 First, we grabbed all available zones just for show.  Then, we grabbed the 'example.com' zone by putting in it’s name, and we printed 
