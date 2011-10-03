@@ -22,8 +22,9 @@ How to Install from github\:
 You also need to set the following environment variables:
 
 ```bash
-export AWS_ACCESS_KEY_ID="<Insert AWS Access Key>"
-export AWS_SECRET_KEY_ID="<Insert AWS Secret Key>"
+export AWS_ACCESS_KEY_ID="<Insert your AWS Access Key>"
+export AWS_SECRET_KEY_ID="<Insert your AWS Secret Key>"
+```
 
 ## Usage
 I wrote this library to make dealing with Amazon AWS a lot easier.
