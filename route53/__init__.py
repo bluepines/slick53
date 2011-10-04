@@ -85,7 +85,7 @@ class Zone(object):
                 change.add_value(record)
         else:
             change.add_value(value)
-        return Status(changes.commit()['ChangeResourceRecordSetsResponse']['ChangeInfo'])
+        status = Status(changes.commit()['ChangeResourceRecordSetsResponse']['ChangeInfo'])
 
     def update_record(self, resource_type, name, old_value, new_value, old_ttl, new_ttl=None, comment=""):
         new_ttl = new_ttl or default_ttl
@@ -102,7 +102,7 @@ class Zone(object):
                 change.add_value(record)
         else:
             change.add_value(new_value)
-        return Status(changes.commit()['ChangeResourceRecordSetsResponse']['ChangeInfo'])
+        status = Status(changes.commit()['ChangeResourceRecordSetsResponse']['ChangeInfo'])
 
     def delete_record(self, resource_type, name, value, ttl=None, comment=""):
         """Delete a record from a zone"""
@@ -114,7 +114,7 @@ class Zone(object):
                 change.add_value(record)
         else:
             change.add_value(value)
-        return Status(changes.commit()['ChangeResourceRecordSetsResponse']['ChangeInfo'])
+        status = Status(changes.commit()['ChangeResourceRecordSetsResponse']['ChangeInfo'])
 
     def add_cname(self, name, value, ttl=None, comment=""):
         ttl = ttl or default_ttl
