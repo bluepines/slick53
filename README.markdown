@@ -40,12 +40,21 @@ which points back to the naked domain.  Then we also added two MX records
 for our mail exchangers.  Also, you don’t need to worry about trailing dots 
 and fully qualified domain names, because that is handled automatically.
 
-Now, once we have all of our records up and running let’s see what we can do.
+Now, we can grab a list of all zones like this: 
 
 ```python
 >>>  route53.get_zones()
 [<Zone:example.com.>, <Zone:bluepines.org.>]
+```
+
+Or we can grab our individual zone by name:
+```python
 >>> zone = route53.get_zone('example.com')
+```
+
+You can also look at what records you have in your zone:
+
+```python
 >>> for record in zone.get_records():
 ...     print record
 ...
@@ -54,15 +63,15 @@ Now, once we have all of our records up and running let’s see what we can do.
 <Record:MX:example.com.:[u'10 mx1.example.com.', u'20 mx2.example.com.']>
 <Record:NS:example.com.:[u'ns-1249.awsdns-28.org.', u'ns-902.awsdns-48.net.']>
 <Record:SOA:example.com.[u'ns-1249.awsdns-28.org. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400']>
+```
+
+```python
+And here is how you grab just the nameservers for your zone:
 >>> zone.get_nameservers()
 [u'ns-1249.awsdns-28.org.', u'ns-902.awsdns-48.net.']
 ```
 
-First, we grabbed all available zones just for show.  Then, we grabbed the 'example.com' zone by putting in it’s name, and we printed 
-all the records that we have added so far. (Notice, every zone you create 
-has an NS record and SOA record automatically created by Route53 when you 
-create the zone.) We also printed the list of name servers that Amazon 
-started us out with.  You add the nameservers to your domain 
+You add the nameservers to your domain 
 registrar to actually switch to Amazon’s DNS service.  I would recommend 
 migrating a non-critical domain to start to make sure that you understand 
 the process before moving your big domain with hundreds of records over to Route53. 
@@ -70,11 +79,11 @@ the process before moving your big domain with hundreds of records over to Route
 Now we can remove all these records and the zone itself like so:
 
 ```python
->>> zone = route53.get_zone('example.com')
->>> zone.delete_a('example.com')
->>> zone.delete_cname('www.example.com')
->>> zone.delete_mx()
->>> zone.delete()
+>>> zone = route53.get_zone('example.com') # Get the zone.
+>>> zone.delete_a('example.com')           # Delete A record from the zone.
+>>> zone.delete_cname('www.example.com')   # Delete CNAME record from the zone.
+>>> zone.delete_mx()                       # Delete MX records from the zone.
+>>> zone.delete()                          # Delete the zone itself.
 ```
 
 If anyone has any questions, bugs or issues then feel free to ask.  
