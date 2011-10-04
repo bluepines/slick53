@@ -43,7 +43,7 @@ and fully qualified domain names, because that is handled automatically.
 Now, we can grab a list of all zones like this: 
 
 ```python
->>>  route53.get_zones()
+>>>  route53.get_zones() # Get all hosted zones.
 [<Zone:example.com.>, <Zone:bluepines.org.>]
 ```
 
@@ -66,9 +66,10 @@ You can also look at what records you have in your zone:
 <Record:SOA:example.com.[u'ns-1249.awsdns-28.org. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400']>
 ```
 
-```python
 And here is how you grab just the nameservers for your zone:
->>> zone.get_nameservers()
+
+```python
+>>> zone.get_nameservers() # Get nameservers for the zone.
 [u'ns-1249.awsdns-28.org.', u'ns-902.awsdns-48.net.']
 ```
 
