@@ -28,10 +28,10 @@ Now you can write code like the following:
 
 ```python
 >>> from slick53 import route53
->>> zone = route53.create_zone('example.com')
->>> zone.add_a('example.com', '182.12.142.12')
->>> zone.add_cname('www.example.com', 'example.com')
->>> zone.add_mx(['10 mx1.example.com', '20 mx2.example.com'])
+>>> zone = route53.create_zone('example.com')                 # Creates the zone, example.com.
+>>> zone.add_a('example.com', '182.12.142.12')                # Adds A record to zone.
+>>> zone.add_cname('www.example.com', 'example.com')          # Adds CNAME record to zone.
+>>> zone.add_mx(['10 mx1.example.com', '20 mx2.example.com']) # Adds MX records to zone.
 ```
 
 Now what just happended.  On line two we create the zone.  Then we create 
