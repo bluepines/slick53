@@ -47,7 +47,8 @@ Now, once we have all of our records up and running let’s see what we can do.
 [<Zone:example.com.>, <Zone:bluepines.org.>]
 >>> zone = route53.get_zone('example.com')
 >>> for record in zone.get_records():
-    print record
+...     print record
+...
 <Record:A:example.com.:[u'182.12.142.12']>
 <Record:CNAME:www.example.com.:['example.com.']>
 <Record:MX:example.com.:[u'10 mx1.example.com.', u'20 mx2.example.com.']>
