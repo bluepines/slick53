@@ -4,7 +4,7 @@ A python interface for AWS Route53.
  * Original Author: Brad Carleton
  * Company: Blue Pines Technologies
  * Website: [http://www.bluepines.org](http://www.bluepines.org)
- * Blog Release: [An introduction to Slick53](http://www.bluepines.org/blog/slick53-python-interface-aws-route53)
+ * Blog Release: [An introduction to Slick53](http://www.bluepines.org/blog/slick53-python-route53-aws)
 
 ## Installation
 Run these commands to install:
