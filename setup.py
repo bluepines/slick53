@@ -8,7 +8,7 @@ if __name__ == '__main__':
           author='Brad Carleton',
           author_email='brad.carleton@bluepines.org',
           url='http://github.com/bluepines/Slick53',
-          package_dir = {'': '..'},
+          #package_dir = {'': '.'},
           packages = ['slick53', 'slick53.route53'],
           requires=['boto (>=2.0)']
     )
